@@ -1,0 +1,129 @@
+body{
+	position: relative;
+}
+.outermost{
+	height: 90%;
+	position: absolute;
+	top: 8%;
+	left: 4.5%;
+}
+
+.time_left{
+	height: 7%;
+    margin-top: 3%;
+    margin-left: 4%;
+    line-height: 41px;
+}
+
+.score{
+	position: absolute;
+    right: 5%;
+    width: 200px;
+    height: 7%;
+    margin-top: 3%;
+    margin-left: 4%;
+    line-height: 41px;
+}
+
+.question_container{
+	position: absolute;
+    top: 18%;
+    width: 80%;
+    left: 10%;
+    height: 37%;
+}
+
+.question{
+	font-size: 10em;
+}
+
+.choose_correct{
+    position: absolute;
+    top: 57%;
+    width: 80%;
+    height: 7%;
+    left: 10%;
+  
+}
+
+.options{
+	height: 22%;
+    width: 80%;
+    position: absolute;
+    top: 67%;
+    left: 11.5%;
+}
+
+.options li{
+	width: 20%;
+	margin-right: 5%;
+	padding: 0;
+	cursor: pointer;
+}
+
+.options li:hover{
+	transform: translateY(5px);
+}
+
+#last_option{
+	margin-right: 0;
+}
+
+.options li md-whiteframe{
+	height: 100px;
+}
+
+#start_button_content{
+	margin-left: 37%;
+    background-color: white;
+    height: 48px;
+    position: absolute;
+    top: 90%;
+}
+
+.start_game_button{
+	min-width: 250px;
+}
+
+.game_over{
+	z-index: 9999;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 27%;
+    height: 50%;
+}
+
+.game_over1{
+	position: absolute;
+	top: 10%;
+	font-size: 5em;
+}
+
+.game_over2{
+	font-size: 5em;
+	position: absolute;
+	top: 45%;
+}
+
+#option1, #option2, #option3, #option4{
+	font-size: 2em;
+}
+
+.change{
+	position: absolute;
+	bottom: 0;
+	right: 2%;
+}
+
+.range{
+	margin-bottom: 2%;
+	cursor: pointer;
+	color: blue;
+}
+
+.time{
+	cursor: pointer;
+	color: blue;
+	letter-spacing: 0.6px;
+}
