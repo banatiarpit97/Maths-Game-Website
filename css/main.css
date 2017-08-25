@@ -66,7 +66,7 @@ body{
 }
 
 #last_option{
-	margin-right: 0;
+	margin-right: 0 !important;
 }
 
 .options li md-whiteframe{
@@ -126,4 +126,79 @@ body{
 	cursor: pointer;
 	color: blue;
 	letter-spacing: 0.6px;
+}
+
+/*Mobile devices*/
+@media(max-width: 480px){
+	.outermost{
+		width: 94%;
+		top: 3%;
+		left: 2.5%;
+	}
+     .time_left{
+     	margin-top: 6%;
+     	margin-left: 7%;
+     	padding: 2%;
+     	height: 7.5%;
+     }	
+     .score{
+     	margin-top: 6%;
+     	width: 110px;
+        right: 10%;
+     }
+     .question {
+      font-size: 7em;
+     }
+     .question_container{
+     	top: 15%;
+     	height: 29%;
+     }
+     .choose_correct{
+     	top: 46%;
+     }
+     .options{
+     	top: 57%;
+     }
+     .options li{
+     	width: 46%;
+     	margin-bottom: 5%;
+     }
+     .options li md-whiteframe{
+     	height: 63px;
+     }
+     .no_right_margin_option{
+	margin-right: 0 !important;
+    }
+     #start_button_content{
+     	margin-left: 25%;
+     	top: 88%;
+     }
+     .start_game_button{
+     	min-width: 150px;
+     }
+     .change{
+     	position: initial;
+     }
+     .range{
+     	position: absolute;
+     	bottom: -8%;
+     	left: 3%;
+     }
+     .time{
+     	position: absolute;
+     	bottom: -8%;
+     	right: 3%;
+     }
+     .game_over1{
+	position: absolute;
+	top: 10%;
+	font-size: 3em;
+    }
+
+    .game_over2{
+	font-size: 2.8em;
+	position: absolute;
+	top: 37%;
+	text-align: center;
+    }
 }
