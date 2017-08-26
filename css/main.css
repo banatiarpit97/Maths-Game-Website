@@ -4,8 +4,9 @@ body{
 .outermost{
 	height: 90%;
 	position: absolute;
-	top: 8%;
+	top: 4%;
 	left: 4.5%;
+	width: 90%;
 }
 
 .time_left{
@@ -13,6 +14,7 @@ body{
     margin-top: 3%;
     margin-left: 4%;
     line-height: 41px;
+    padding: 2%;
 }
 
 .score{
@@ -111,18 +113,24 @@ body{
 }
 
 .change{
-	position: absolute;
-	bottom: 0;
-	right: 2%;
+	position: initial;
+
 }
 
 .range{
-	margin-bottom: 2%;
+	position: absolute;
+	bottom: -8%;
+	right: 163px;
+	margin-bottom: 1%;
 	cursor: pointer;
 	color: blue;
 }
 
 .time{
+	position: absolute;
+	bottom: -8%;
+	right: 0;
+	margin-bottom: 1%;
 	cursor: pointer;
 	color: blue;
 	letter-spacing: 0.6px;
@@ -180,11 +188,13 @@ body{
      	position: initial;
      }
      .range{
+     	margin-bottom: 2%;   
      	position: absolute;
      	bottom: -8%;
      	left: 3%;
      }
      .time{
+     	margin-bottom: 2%;
      	position: absolute;
      	bottom: -8%;
      	right: 3%;
@@ -201,4 +211,10 @@ body{
 	top: 37%;
 	text-align: center;
     }
+}
+
+@media (max-width: 380px){
+	.time, .range{
+		font-size: 0.9em;
+	}
 }
