@@ -1,3 +1,6 @@
+html{
+    background: radial-gradient(circle, #fff, #ccc);
+}
 body{
 	position: relative;
 }
@@ -7,6 +10,7 @@ body{
 	top: 4%;
 	left: 4.5%;
 	width: 90%;
+    background-color: #9DD2EA;
 }
 
 .time_left{
@@ -15,6 +19,8 @@ body{
     margin-left: 4%;
     line-height: 41px;
     padding: 2%;
+    background-color: rgb(181,235,36);
+    opacity: 0.8;
 }
 
 .score{
@@ -25,6 +31,9 @@ body{
     margin-top: 3%;
     margin-left: 4%;
     line-height: 41px;
+    background-color: #f1ff92;
+    color: #888ef5;
+    font-weight: bold;
 }
 
 .question_container{
@@ -33,10 +42,12 @@ body{
     width: 80%;
     left: 10%;
     height: 37%;
+    background-color: #9da0ea;
 }
 
 .question{
 	font-size: 10em;
+    font-family: cursive,sans-serif;
 }
 
 .choose_correct{
@@ -45,7 +56,8 @@ body{
     width: 80%;
     height: 7%;
     left: 10%;
-  
+    background-color: #b481d9;
+
 }
 
 .options{
@@ -61,6 +73,7 @@ body{
 	margin-right: 5%;
 	padding: 0;
 	cursor: pointer;
+    background-color: white;
 }
 
 .options li:hover{
@@ -77,7 +90,7 @@ body{
 
 #start_button_content{
 	margin-left: 37%;
-    background-color: white;
+    background-color: #9DD2EA;
     height: 48px;
     position: absolute;
     top: 90%;
@@ -85,6 +98,7 @@ body{
 
 .start_game_button{
 	min-width: 250px;
+    background-color: rgba(255,255,255,0.5);
 }
 
 .game_over{
@@ -94,22 +108,27 @@ body{
     left: 15%;
     top: 27%;
     height: 50%;
+    background: linear-gradient(#f3ca6b, #f3706c);
 }
 
 .game_over1{
 	position: absolute;
 	top: 10%;
 	font-size: 5em;
+    color: white;
+
 }
 
 .game_over2{
 	font-size: 5em;
 	position: absolute;
 	top: 45%;
+    color: white;
+
 }
 
 #option1, #option2, #option3, #option4{
-	font-size: 2em;
+	font-size: 2.5em;
 }
 
 .change{
@@ -148,7 +167,7 @@ body{
      	margin-left: 7%;
      	padding: 2%;
      	height: 7.5%;
-     }	
+     }
      .score{
      	margin-top: 6%;
      	width: 110px;
@@ -188,7 +207,7 @@ body{
      	position: initial;
      }
      .range{
-     	margin-bottom: 2%;   
+     	margin-bottom: 2%;
      	position: absolute;
      	bottom: -8%;
      	left: 3%;
@@ -217,4 +236,12 @@ body{
 	.time, .range{
 		font-size: 0.9em;
 	}
+}
+@media(max-width:992px){
+  .options li:hover{
+  	transform: translateY(0px);
+  }
+  #option1, #option2, #option3, #option4{
+  	font-size: 2em;
+  }
 }

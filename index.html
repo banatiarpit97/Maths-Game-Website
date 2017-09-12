@@ -51,7 +51,7 @@
     <!-- Options -->
     <div class="options">
       <ul type="none" class="list-inline">
-        
+
         <li>
           <md-whiteframe class="md-whiteframe-3dp option1"  layout layout-align="center center">
       <span id="option1">30</span>
@@ -61,19 +61,19 @@
           <md-whiteframe class="md-whiteframe-3dp option2"  layout layout-align="center center">
       <span id="option2">58</span>
     </md-whiteframe>
-    
+
         </li>
         <li>
           <md-whiteframe class="md-whiteframe-3dp option3"  layout layout-align="center center">
       <span id="option3">42</span>
     </md-whiteframe>
-    
+
         </li>
         <li class="no_right_margin_option" id="last_option">
           <md-whiteframe class="md-whiteframe-3dp option4"  layout layout-align="center center">
       <span id="option4">48</span>
     </md-whiteframe>
-    
+
         </li>
       </ul>
     </div>
@@ -82,14 +82,14 @@
     <!-- Start Button -->
     <md-content id= "start_button_content">
     <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-      <md-button class="md-raised start_game_button">Start Game</md-button>
+      <md-button class="md-raised md-primary start_game_button">Start Game</md-button>
     </section>
     </md-content>
     <!-- Start Button -->
 
-   <div class="change">
-    <p class="range">Change range of tables?</p>
-    <p class="time">Change time duration?</p>
+   <div class="change"ng-controller = "Change" >
+    <p class="range" ng-click="range($event)">Change range of tables?</p>
+    <p class="time" ng-click="time($event)">Change time duration?</p>
    </div>
 
 
@@ -98,7 +98,7 @@
 
 
 
-  <!--Script FIles included here -->	
+  <!--Script FIles included here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -109,9 +109,52 @@
   <script src = "js/main.js"></script>
   <!--Script FIles included here -->
   <script >
-	angular.module('mathsGame',['ngMaterial']);
+	// angular.module('mathsGame',['ngMaterial'])
+  // .controller('Change', function ($scope, $mdDialog) {
+  //          $scope.range = function(ev) {
+  //              $mdDialog.show({
+  //                  controller: DialogController,
+  //                  templateUrl: 'templates/changeRange.html',
+  //                  parent: angular.element(document.body),
+  //                  targetEvent: ev,
+  //                  clickOutsideToClose:true// Only for -xs, -sm breakpoints.
+  //              })
+  //
+  //          };
+  //
+  //          $scope.time = function(ev) {
+  //              $mdDialog.show({
+  //                  controller: DialogController,
+  //                  templateUrl: 'templates/changeTime.html',
+  //                  parent: angular.element(document.body),
+  //                  targetEvent: ev,
+  //                  clickOutsideToClose:true// Only for -xs, -sm breakpoints.
+  //              })
+  //
+  //          };
+  //
+  //          function DialogController($scope, $mdDialog) {
+  //              $scope.close = function() {
+  //                  $mdDialog.cancel();
+  //              };
+  //              $scope.cancel = function() {
+  //                  $mdDialog.cancel();
+  //              };
+  //              $scope.confirmRange = function() {
+  //                  console.log($scope.startNumber, $scope.endNumber);
+  //                  $scope.close();
+  //              }
+  //              $scope.confirmTime = function() {
+  //                  console.log($scope.time);
+  //                  sessionStorage.time = $scope.time;
+  //                  console.log(sessionStorage.time);
+  //                  $scope.close();
+  //
+  //              }
+  //
+  //          }
+  //      });
 </script>
 </body>
 
 </html>
-

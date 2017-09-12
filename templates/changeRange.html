@@ -1,0 +1,55 @@
+<div>
+  <style>
+  .dialog_box{
+    width: 400px;
+    max-width: 100%;
+    }
+    .end{
+      margin-bottom: 0;
+    }
+  </style>
+
+<md-dialog class = "dialog_box">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h1>Enter Range Of Tables</h1>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="close()">
+                    <i class="fa fa-times fa-lg"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <form>
+                    <md-content layout-padding>
+                    <md-input-container class="md-block start">
+                        <label>Starting Number</label>
+                        <input type="number" ng-model="startNumber">
+                    </md-input-container>
+
+                    <md-input-container class="md-block end">
+                        <label>Ending Number</label>
+                        <input type="number" ng-model="endNumber">
+                    </md-input-container>
+
+                    </md-content>
+
+
+                </form>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button  md-no-ink class="md-primary" ng-click="confirmRange()">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+</div>
