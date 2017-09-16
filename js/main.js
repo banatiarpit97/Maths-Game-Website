@@ -67,7 +67,7 @@ if(sessionStorage.time){
 	timeLeft = Number(sessionStorage.time);
 }
 else{
-	timeLeft = 10;
+	timeLeft = 60;
 }
 timeLeftCopy = timeLeft;
 
@@ -82,7 +82,7 @@ if(sessionStorage.endNumber){
 	maxNumber = Number(sessionStorage.endNumber);
 }
 else{
-	maxNumber = 60;
+	maxNumber = 10;
 }
 
 
