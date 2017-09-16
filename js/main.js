@@ -82,7 +82,7 @@ if(sessionStorage.endNumber){
 	maxNumber = Number(sessionStorage.endNumber);
 }
 else{
-	maxNumber = 10;
+	maxNumber = 60;
 }
 
 
