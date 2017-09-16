@@ -51,9 +51,10 @@ angular.module('mathsGame',['ngMaterial'])
 						 $scope.confirmTime = function() {
 								 sessionStorage.time = $scope.time;
 								 timeLeft = $scope.time;
-								 timeLeftCopy = timeLeft
+								 timeLeftCopy = timeLeft;
 								 	score = 0;
 								 	$(".score_value").html(score);
+                                    wrongGuesses = 0;
 								 	generateQuesAns();
 								 $scope.close();
 
