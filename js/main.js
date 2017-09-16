@@ -7,6 +7,7 @@ angular.module('mathsGame',['ngMaterial'])
 	var minNumber;
 	var timeLeft;
 	var timeLeftCopy;
+	var wrongGuesses = 0;
 
 				 $scope.range = function(ev) {
 						 $mdDialog.show({
@@ -38,7 +39,6 @@ angular.module('mathsGame',['ngMaterial'])
 								 $mdDialog.cancel();
 						 };
 						 $scope.confirmRange = function() {
-								 console.log($scope.startNumber, $scope.endNumber);
 								 sessionStorage.startNumber = Number($scope.startNumber);
 								 sessionStorage.endNumber = Number($scope.endNumber);
 								 minNumber =  $scope.startNumber;
@@ -46,8 +46,6 @@ angular.module('mathsGame',['ngMaterial'])
 								 	score = 0;
 								 	$(".score_value").html(score);
 								 	generateQuesAns();
-								 console.log(sessionStorage.startNumber, sessionStorage.endNumber);
-								 console.log(minNumber, maxNumber);
 								 $scope.close();
 						 }
 						 $scope.confirmTime = function() {
@@ -69,7 +67,7 @@ if(sessionStorage.time){
 	timeLeft = Number(sessionStorage.time);
 }
 else{
-	timeLeft = 60;
+	timeLeft = 10;
 }
 timeLeftCopy = timeLeft;
 
@@ -87,23 +85,6 @@ else{
 	maxNumber = 10;
 }
 
-console.log(minNumber, maxNumber);
-// $(".range").click(function(){
-// 	minNumber = prompt("Enter Minimum number for range");
-// 	maxNumber = prompt("Enter Maximum number for range");
-// 	score = 0;
-// 	$(".score_value").html(score);
-// 	generateQuesAns();
-// })
-
-// $(".time").click(function(){
-// 	timeLeft = prompt("Enter Time Duration of the Game");
-// 	timeLeftCopy = timeLeft;
-// 	$("#time_value").html(timeLeft + " sec")
-// 	score = 0;
-// 	$(".score_value").html(score);
-// 	generateQuesAns();
-// })
 
 $("#start_button_content").click(function(){
 	if(playing){
@@ -136,6 +117,7 @@ var timer =  function(){
 		     $("#time_value").html(timeLeft+" sec")
 		     if(timeLeft == 0){
 		       playing = false;
+		        $("#wrongNumber").html(wrongGuesses);
 		       	$(".game_over").removeClass("hidden");
 				$(".time_left").addClass("hidden");
 				timeLeft = timeLeftCopy;
@@ -161,12 +143,11 @@ var generateQuesAns = function(){
       {allAnswers.push(wrongAnswer);
       }
     }
-    console.log(allAnswers)
     j = 1;
     for(i=1;i<4;i++){
        for(;j<5;j++){
             option = '#option'+ j;
-            if($(option).html() != correctAnswer){
+            if(option != correctOption){
        	       $(option).html(allAnswers[i]);
        	       j++;
        	       break;
@@ -174,25 +155,25 @@ var generateQuesAns = function(){
        }
     }
 
-
+}
 		$(".option1").click(function(){
-			if((($("#option1").html()) == correctAnswer) && (playing == true)){
+			if(correctOption == "#option1"){
 				updateScore();
 				$(".option1").css("background-color", "green");
 				var b = setTimeout(function(){$(".option1").css("background-color", "white")}, 300);
-
 				generateQuesAns();
 			}
 
-			else if (playing){
+			else{
 				$(".option1").css("background-color", "red");
+				wrongGuesses+=1;
 				var a = setTimeout(function(){$(".option1").css("background-color", "white")}, 300);
 
 
 			}
 		})
 		$(".option2").click(function(){
-			if((($("#option2").html()) == correctAnswer) && (playing == true)){
+			if(correctOption == "#option2"){
 				updateScore();
 				$(".option2").css("background-color", "green");
 				b = setTimeout(function(){$(".option2").css("background-color", "white")}, 300);
@@ -200,7 +181,8 @@ var generateQuesAns = function(){
 
 			}
 
-			else if (playing){
+			else{
+				wrongGuesses+=1;
 				$(".option2").css("background-color", "red");
 				a = setTimeout(function(){$(".option2").css("background-color", "white")}, 300);
 
@@ -208,17 +190,17 @@ var generateQuesAns = function(){
 			}
 		})
 		$(".option3").click(function(){
-			if((($("#option3").html()) == correctAnswer) && (playing == true)){
+			if(correctOption == "#option3"){
 				updateScore();
 				$(".option3").css("background-color", "green");
 				b = setTimeout(function(){$(".option3").css("background-color", "white")}, 300);
-
 				generateQuesAns();
 
 
 			}
 
-			else if (playing){
+			else{
+				wrongGuesses+=1;
 				$(".option3").css("background-color", "red");
 				a = setTimeout(function(){$(".option3").css("background-color", "white")}, 300);
 
@@ -226,17 +208,17 @@ var generateQuesAns = function(){
 			}
 		})
 		$(".option4").click(function(){
-			if((($("#option4").html()) == correctAnswer) && (playing == true)){
+			if(correctOption == "#option4"){
 				updateScore();
 				$(".option4").css("background-color", "green");
 				b = setTimeout(function(){$(".option4").css("background-color", "white")}, 300);
-
 				generateQuesAns();
 
 
 			}
 
-			else if (playing){
+			else{
+				wrongGuesses+=1;
 				$(".option4").css("background-color", "red");
 				a = setTimeout(function(){$(".option4").css("background-color", "white")}, 300);
 
@@ -245,9 +227,8 @@ var generateQuesAns = function(){
 		})
 
 
-}
+
 });
 
 
 // shows red color sometimes even when clicked on wrong answer, though score incereases by 1 and ques changes
-// 2 same options sometimes thogh the allAnswers array have all different values when i print it in console

@@ -231,6 +231,12 @@ body{
 	text-align: center;
     }
 }
+.wrongGuessResult{
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    color: white;
+}
 
 @media (max-width: 380px){
 	.time, .range{
