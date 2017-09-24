@@ -7,6 +7,16 @@
     .end{
       margin-bottom: 0;
     }
+    .rangeError1, .rangeError2{
+      margin-top: 35px;
+      color: red;
+    }
+    .fa-info-circle{
+      margin-right: 2%;
+    }
+    .greaterMessage{
+      color: red;
+    }
   </style>
 
 <md-dialog class = "dialog_box">
@@ -27,15 +37,18 @@
                     <md-content layout-padding>
                     <md-input-container class="md-block start">
                         <label>Starting Number</label>
-                        <input type="number" ng-model="startNumber">
+                        <input type="number" min="1" ng-model="startNumber" class="startNumber" >
+                        <p class="rangeError1 hidden"><i class="fa fa-info-circle"></i><span class="rangeMessage1"></span></p>
                     </md-input-container>
 
                     <md-input-container class="md-block end">
                         <label>Ending Number</label>
-                        <input type="number" ng-model="endNumber">
+                        <input type="number" ng-model="endNumber" class="endNumber">
+                        <p class="rangeError2 hidden"><i class="fa fa-info-circle"></i><span class="rangeMessage2"></span></p>
                     </md-input-container>
-
                     </md-content>
+                    <p class="greaterMessage hidden"><i class="fa fa-info-circle"></i>Ending Number should be grater than Starting Number!</p>
+
 
 
                 </form>

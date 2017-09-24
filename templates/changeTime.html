@@ -4,6 +4,18 @@
     width: 400px;
     max-width: 100%;
     }
+    .timeError{
+      color: red;
+    }
+    .fa-info-circle{
+      margin-right: 2%;
+    }
+    md-input-container{
+      margin-bottom: 0 !important;
+    }
+    md-content{
+      padding-bottom: 0 !important;
+    }
   </style>
 
 <md-dialog class = "dialog_box">
@@ -26,8 +38,8 @@
                         <label>Time Duration in Seconds</label>
                         <input type="number" ng-model="time">
                     </md-input-container>
-
                     </md-content>
+                    <p class="timeError hidden"><i class="fa fa-info-circle"></i><span class="timeMessage"></span></p>
 
 
                 </form>
