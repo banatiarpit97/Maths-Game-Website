@@ -1,6 +1,16 @@
 angular.module('mathsGame',['ngMaterial'])
 .controller('Change', function ($scope, $mdDialog) {
 
+  if(!sessionStorage.startNumber){
+            sessionStorage.startNumber = 1;
+  }
+  if(!sessionStorage.endNumber){
+            sessionStorage.endNumber = 10;
+  }
+  if(!sessionStorage.time){
+            sessionStorage.time = 60;
+  }
+
 	var playing = false;
 	var score;
 	var maxNumber;
@@ -33,6 +43,28 @@ angular.module('mathsGame',['ngMaterial'])
 				 };
 
 				 function DialogController($scope, $mdDialog) {
+          if(sessionStorage.startNumber){
+            $scope.startNumber = Number(sessionStorage.startNumber);
+            // console.log("hh", typeof $scope.startNumber)
+          }
+          else{
+            $scope.startNumber = 1;
+          }
+          if(sessionStorage.endNumber){
+            $scope.endNumber = Number(sessionStorage.endNumber);
+          }
+          else{
+            $scope.endNumber = 10;
+          }
+          if(sessionStorage.time){
+            $scope.time = Number(sessionStorage.time);
+          }
+          else{
+            $scope.time = 60;
+          }
+          // $scope.startNumber = minNumber;
+          // $scope.endNumber = 10;
+
         //    if(sessionStorage.startNumber && sessionStorage.endNumber){
         //      console.log('aa');
         //      console.log(sessionStorage.startNumber)
@@ -101,7 +133,7 @@ angular.module('mathsGame',['ngMaterial'])
                $(".rangeError2").addClass("hidden");
                $scope.okay2 = 1;
              }
-             if(($scope.okay1 + $scope.okay2 == 2) && ($scope.endNumber <= $scope.startNumber)){
+             if(($scope.okay1 + $scope.okay2 == 2) && ($scope.endNumber < $scope.startNumber)){
                $(".greaterMessage").removeClass("hidden");
                $scope.okay3 = 0;
              }
@@ -126,7 +158,7 @@ angular.module('mathsGame',['ngMaterial'])
 								 sessionStorage.endNumber = Number($scope.endNumber);
 								 minNumber =  $scope.startNumber;
 								 maxNumber = 	$scope.endNumber;
-								 	score = 0;
+								 	// score = 0;
 								 	$(".score_value").html(score);
 								 	generateQuesAns();
 								 $scope.close();
@@ -176,7 +208,12 @@ else{
 
 $("#start_button_content").click(function(){
 	if(playing){
-		location.reload();
+		score = 0;
+    $(".score_value").html(score);
+    timeLeft = sessionStorage.time;
+    $("#time_value").html(timeLeft + " sec");
+    generateQuesAns();
+
 	}
 	else{
 
