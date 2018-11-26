@@ -89,7 +89,9 @@ body{
 }
 
 #start_button_content{
-	margin-left: 37%;
+    width: 100%;
+    left: 0;
+    text-align: center;
     background-color: #9DD2EA;
     height: 48px;
     position: absolute;
@@ -197,7 +199,7 @@ body{
 	margin-right: 0 !important;
     }
      #start_button_content{
-     	margin-left: 25%;
+     	/* margin-left: 25%; */
      	top: 88%;
      }
      .start_game_button{
